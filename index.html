@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Romane Chaussis</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  </script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
@@ -16,6 +21,9 @@
     <a href="lobbies.html">🎮 Lobbies</a>
     <a href="famille-news.html">👨‍👩‍👧 Famille</a>
   </nav>
+  <div>
+    <button id="theme-toggle" style="margin-left: auto;">🌓</button>
+  </div>
   <header>
     <h1>Bienvenue sur le site de Romane Chaussis</h1>
     <p>Ce site rassemble mes projets de développement, mes idées créatives, mon parcours personnel, et même quelques nouvelles familiales.</p>
@@ -38,6 +46,14 @@
       <li><strong>Famille :</strong> les petites news personnelles, côté famille.</li>
     </ul>
   </section>
-
+<script>
+  const btn = document.getElementById('theme-toggle');
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
 </body>
 </html>

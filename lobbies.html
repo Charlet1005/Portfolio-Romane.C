@@ -17,7 +17,7 @@
   <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
     <div id="menu-links" class="navbar hidden">
-      <button id="theme-toggle" class="theme-button">🌓</button>
+      <button id="theme-toggle-mobile" class="theme-button">🌓</button>
       <a href="index.html">🏠 Accueil</a>
       <a href="apropos.html">🙋‍♀️ À propos</a>
       <a href="developpement.html">💻 Développement</a>
@@ -27,7 +27,7 @@
   </div>
 
   <nav class="navbar desktop-only">
-    <button id="theme-toggle" class="theme-button">🌓</button>
+    <button id="theme-toggle-desktop" class="theme-button">🌓</button>
     <a href="index.html">🏠 Accueil</a>
     <a href="apropos.html">🙋‍♀️ À propos</a>
     <a href="developpement.html">💻 Développement</a>
@@ -36,14 +36,16 @@
   </nav>
 
 <script>
-  const toggleButtons = document.querySelectorAll('#theme-toggle');
-  toggleButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
+  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
   });
 
   document.getElementById("menu-toggle").addEventListener("click", () => {
@@ -51,6 +53,7 @@
     menu.classList.toggle("show");
   });
 </script>
+
 </body>
 </html>
 

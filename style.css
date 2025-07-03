@@ -1,3 +1,23 @@
+:root {
+  --bg-color: #f0fff4;
+  --text-color: #22543d;
+  --nav-bg: #e6f4ea;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #f0fff4;
+  --nav-bg: #2c2c2c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.navbar {
+  background-color: var(--nav-bg);
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0fff4;

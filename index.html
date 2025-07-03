@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Romane Chaussis</title>
   <style>
     body {
@@ -15,43 +15,27 @@
       padding: 20px;
     }
 
-    h1, h2, h3 {
-      color: #4a4a4a;
-      margin-top: 60px;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .skills-table td, .skills-table th {
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-
-    .project {
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       margin-bottom: 20px;
     }
 
+    h1 {
+      color: #4a4a4a;
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
     .menu-photo {
-      position: absolute;
-      top: 20px;
-      right: 20px;
       text-align: right;
     }
 
     #profile-img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       cursor: pointer;
       border: 2px solid #ccc;
@@ -87,42 +71,56 @@
       display: none;
     }
 
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skills-table td, .skills-table th {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    .project {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
       .menu-photo {
-        position: static;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      #profile-img {
-        width: 80px;
-        height: 80px;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      #menu-links {
-        margin: 10px auto 0;
-        text-align: center;
+        margin-top: 10px;
       }
     }
   </style>
+
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 </head>
 <body>
 
-  <div class="menu-photo">
-    <img src="assets/photo-romane.jpeg" alt="Romane Chaussis" id="profile-img" onclick="toggleMenu()" />
-    <div id="menu-links" class="hidden">
-      <a href="index.html">🏠 Accueil</a>
-      <a href="apropos.html">🙋‍♀️ À propos</a>
-      <a href="mailto:romane.chaussis@free.fr">📧 Me contacter</a>
+  <div class="header">
+    <h1>💻 Romane Chaussis – Portfolio développeuse junior</h1>
+    <div class="menu-photo">
+      <img src="assets/photo-romane.jpeg" alt="Romane Chaussis" id="profile-img" onclick="toggleMenu()" />
+      <div id="menu-links" class="hidden">
+        <a href="index.html">🏠 Accueil</a>
+        <a href="apropos.html">🙋‍♀️ À propos</a>
+        <a href="mailto:romane.chaussis@free.fr">📧 Me contacter</a>
+      </div>
     </div>
   </div>
-
-  <h1>💻 Romane Chaussis – Portfolio développeuse junior</h1>
 
   <p><em>Passionnée par le développement et les univers RP, je crée des systèmes et des scripts pour mon propre serveur FiveM.</em></p>
 
@@ -174,7 +172,6 @@
       <pre><code class="language-lua">
 RegisterNetEvent('inventory:useItem')
 AddEventHandler('inventory:useItem', function(item)
-  -- logique ici
 end)
       </code></pre>
     </div>
@@ -183,7 +180,7 @@ end)
       <h3>🧭 GPS interne</h3>
       <p><strong>Langage :</strong> JavaScript / HTML</p>
       <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
-      <pre><code class="language-js">
+      <pre><code class="language-lua">
 document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
       </code></pre>
     </div>

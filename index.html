@@ -1,112 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Romane Chaussis</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      color: #333;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      color: #4a4a4a;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .skills-table td, .skills-table th {
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-    .project {
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Weazel News - Breaking News</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        @keyframes scroll-left {
+            from { left: 100%; }
+            to { left: -100%; }
+        }
+
+        body {
+            background: transparent;
+            display: none;
+            font-family: Arial, sans-serif;
+        }
+        /* Breaking News */
+        #breaking-news-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.95);
+            color: white;
+            display: none;
+            z-index: 99999999;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #breaking-news-logo {
+            height: 80px;
+            margin-right: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+        }
+
+        #breaking-news-title {
+            font-weight: bold;
+            font-size: 44px;
+            line-height: 35px;
+            margin: 0;
+            top: 11px;
+            left: 220px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .ticker-container {
+            flex: 1;
+            position: absolute;
+            bottom: 10px;
+            left: 215px;
+            width: calc(100% - 140px);
+            overflow: hidden;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10px;
+        }
+
+        #breaking-news-text {
+            font-size: 28px;
+            white-space: nowrap;
+            position: absolute;
+            animation: scroll-left 25s linear infinite;
+            bottom: 0;
+            transform: translateX(100%);
+        }
+
+    </style>
 </head>
 <body>
-  <h1>💻 Romane Chaussis – Portfolio développeuse junior</h1>
-  <p><em>Passionnée par le développement et les univers RP, je crée des systèmes et des scripts pour mon propre serveur FiveM.</em></p>
-
-  <div class="section">
-    <h2>🧠 Qui je suis</h2>
-    <p><strong>Nom :</strong> Romane Chaussis</p>
-    <p><strong>Âge :</strong> 25 ans</p>
-    <p><strong>Situation :</strong> Étudiante en reconversion (BTS SIO SLAM au CNED)</p>
-    <p><strong>Objectif :</strong> Devenir ingénieure en développement logiciel et entrer à l'ISTY (UVSQ)</p>
-  </div>
-
-  <div class="section">
-    <h2>🛠️ Mes compétences</h2>
-    <table class="skills-table">
-      <tr><th>Domaine</th><th>Compétences</th></tr>
-      <tr><td>Web</td><td>HTML, CSS, un peu de JavaScript</td></tr>
-      <tr><td>Backend / Scripts</td><td>Lua (FiveM), SQL, PHP (début), Python (début)</td></tr>
-      <tr><td>Bases de données</td><td>MySQL / SQLite (avec FiveM)</td></tr>
-      <tr><td>Logiciels</td><td>VS Code, GitHub, Notion</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>📂 Mes projets</h2>
-
-    <div class="project">
-      <h3>🎮 Serveur RP FiveM</h3>
-      <p><strong>Ce que j’ai fait :</strong> configuration du serveur, scripts Lua, inventaire, GPS interne, système de récolte</p>
-      <p><strong>Langages utilisés :</strong> Lua, SQL, JS, HTML/CSS</p>
-      <p><strong>Ce que j’ai appris :</strong> relier front et back, structurer des données, déboguer</p>
-      <p><strong>Captures à venir :</strong> inventaire, carte, menu RP</p>
+    <!-- Breaking News -->
+    <div id="breaking-news-container">
+        <div class="content-wrapper">
+            <img src="media/weazel_logo.png" id="breaking-news-logo">
+            <span id="breaking-news-title">BREAKING NEWS</span>
+            <div class="ticker-container">
+                <span id="breaking-news-text"></span>
+            </div>
+        </div>
+        <audio id="breaking-news-sound" src="media/breakingnews.mp3"></audio>
     </div>
 
-    <div class="project">
-      <h3>🗂️ Application de gestion de scripts</h3>
-      <p><strong>Statut :</strong> En cours</p>
-      <p><strong>Fonction :</strong> outil pour suivre les scripts actifs / urgents, checklist, statut, urgence, commentaires</p>
-      <p><strong>Interface :</strong> maquette en cours sur Notion</p>
-    </div>
-  </div>
+    <script>
+        document.addEventListener("input", function (event) {
+            if (event.target.tagName.toLowerCase() === "textarea") {
+                event.target.style.height = "auto"; // Réinitialise la hauteur
+                event.target.style.height = (event.target.scrollHeight) + "px"; // Ajuste dynamiquement
+            }
+        });
 
-  <div class="section">
-  <h2>📜 Mes scripts</h2>
+        window.addEventListener('message', function(event) {
+            const data = event.data;
+            console.log("[DEBUG] Message reçu du serveur:", data);
 
-  <div class="project">
-    <h3>🔧 Script d'inventaire</h3>
-    <p><strong>Langage :</strong> Lua</p>
-    <p><strong>Description :</strong> Permet aux joueurs de stocker, utiliser et jeter des objets.</p>
-    <pre><code>
-RegisterNetEvent('inventory:useItem')
-AddEventHandler('inventory:useItem', function(item)
-  -- logique d'utilisation
-end)
-    </code></pre>
-    </div>
+            if (typeof data.text === "string" && data.text.trim() !== "") {
+                $("#breaking-news-text").text(data.text);
+            }
 
-    <div class="project">
-      <h3>🧭 GPS interne</h3>
-      <p><strong>Langage :</strong> JavaScript / HTML</p>
-      <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
-      <pre><code>
-  document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
-      </code></pre>
-    </div>
-  </div>
+            if (data.action === 'showBreakingNews') {
+                $("#breaking-news-text").text(data.text);
+                resetAnimation();
+                $("#breaking-news-container, body").fadeIn(500);
+                
+                const sound = $("#breaking-news-sound")[0];
+                sound.volume = 0.1;
+                sound.play();
 
-  <div class="section">
-    <h2>🎯 Objectif professionnel</h2>
-    <p>Je souhaite devenir ingénieure en développement logiciel. Après mon BTS SIO SLAM, je vise l’ISTY à l’UVSQ pour suivre un cycle ingénieur et travailler dans le développement d’outils numériques au service du monde réel ou du jeu vidéo.</p>
-  </div>
+                setTimeout(() => {
+                    $("#breaking-news-container, body").fadeOut(500);
+                    sound.pause();
+                    sound.currentTime = 0;
+                }, 30000);
+            }
+
+
+        function resetAnimation() {
+            const el = $("#breaking-news-text");
+            el.css('animation', 'none');
+            void el[0].offsetWidth;
+            el.css('animation', 'scroll-left 20s linear infinite');
+        }
+        
+    });
+    </script>
 </body>
 </html>

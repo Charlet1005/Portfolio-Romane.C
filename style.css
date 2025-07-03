@@ -18,6 +18,10 @@ body {
   background-color: var(--nav-bg);
 }
 
+a {
+  color: var(--link-color);
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0fff4;

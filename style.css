@@ -194,3 +194,22 @@ h1, h2, h3 {
     display: none;
   }
 }
+ .menu-photo {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #38a169;
+  box-shadow: 0 0 10px #68d391;
+  transition: transform 0.2s ease;
+}
+
+#profile-img:hover {
+  transform: scale(1.05);
+}

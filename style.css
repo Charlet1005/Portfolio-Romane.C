@@ -2,12 +2,14 @@
   --bg-color: #f0fff4;
   --text-color: #22543d;
   --nav-bg: #e6f4ea;
+  --link-color: #2f855a;
 }
 
 [data-theme="dark"] {
   --bg-color: #1e1e1e;
   --text-color: #f0fff4;
   --nav-bg: #2c2c2c;
+  --link-color: #90ee90;
 }
 
 body {
@@ -24,8 +26,8 @@ a {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0fff4;
-  color: #22543d;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   max-width: 900px;
   margin: 0 auto;
@@ -89,7 +91,7 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  background-color: #e6f4ea;
+  background-color: var(--nav-bg);
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 20px;

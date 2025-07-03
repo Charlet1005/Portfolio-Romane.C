@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +27,15 @@
   <p>Je m'appelle Romane Chaussis, j’ai 25 ans, et je suis en reconversion dans le développement logiciel. Je me spécialise dans les scripts et systèmes pour serveurs RP comme FiveM.</p>
   <p>J’adore résoudre des problèmes techniques, créer des outils utiles pour les communautés de joueurs, et je vise une école d’ingénieur (ISTY – UVSQ) pour approfondir mes compétences.</p>
   <script>
-  const btn = document.getElementById('theme-toggle');
-  btn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  });
-</script>
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+      });
+    }
+  </script>
 </body>
 </html>

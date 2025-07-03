@@ -4,158 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Romane Chaussis</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0fff4;
-      color: #22543d;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #4a4a4a;
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .menu-photo {
-      text-align: right;
-    }
-
-    #profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid #38a169;
-      box-shadow: 0 0 10px #68d391;
-      transition: transform 0.2s ease;
-    }
-
-    #profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #68d391;
-    }
-
-    #menu-links {
-      background: white;
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    #menu-links a {
-      display: block;
-      margin: 5px 0;
-      color: #2f855a;
-      text-decoration: none;
-    }
-
-    #menu-links a:hover {
-      color: #38a169;
-      text-decoration: underline;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .skills-table td, .skills-table th {
-      border: 1px solid #c6f6d5;
-      padding: 8px;
-    }
-
-    .project {
-      background-color: #e6f4ea;
-      padding: 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-      border: 1px solid #c6f6d5;
-    }
-
-    @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .menu-photo {
-        margin-top: 10px;
-      }
-    }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  h1, h2, h3 {
-    color: #2f855a;
-  }
-
-  </style>
-
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 </head>
 <body>
+  <nav class="navbar">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="apropos.html">🙋‍♀️ À propos</a>
+    <a href="developpement.html">💻 Développement</a>
+    <a href="lobbies.html">🎮 Lobbies</a>
+    <a href="famille-news.html">👨‍👩‍👧 Famille</a>
+  </nav>
+  <header>
+    <h1>Bienvenue sur le site de Romane Chaussis</h1>
+    <p>Ce site rassemble mes projets de développement, mes idées créatives, mon parcours personnel, et même quelques nouvelles familiales.</p>
+  </header>
 
-  <div class="header">
-    <h1>💻 Romane Chaussis – Portfolio développeuse junior</h1>
-    <div class="menu-photo">
-      <img src="assets/photo-romane.jpeg" alt="Portrait de Romane Chaussis, développeuse junior" id="profile-img" onclick="toggleMenu()" />
-      <div id="menu-links" class="hidden">
-        <a href="index.html">🏠 Accueil</a>
-        <a href="apropos.html">🙋‍♀️ À propos</a>
-        <a href="mailto:romane.chaussis@free.fr">📧 Me contacter</a>
-      </div>
-    </div>
-  </div>
+  <section>
+    <h2>💡 Pourquoi ce site ?</h2>
+    <p>Je voulais un espace à moi pour centraliser :<br>
+    – mes apprentissages en développement,<br>
+    – mes projets techniques ou créatifs,<br>
+    – et quelques moments partagés avec mes proches.</p>
+  </section>
 
-  <p><em>Passionnée par le développement et les univers RP, je crée des systèmes et des scripts pour mon propre serveur FiveM.</em></p>
-
-  <div class="section">
-    <h2>🧠 Qui je suis</h2>
-    <p><strong>Nom :</strong> Romane Chaussis</p>
-    <p><strong>Âge :</strong> 25 ans</p>
-    <p><strong>Situation :</strong> Étudiante en reconversion (BTS SIO SLAM au CNED)</p>
-    <p><strong>Objectif :</strong> Devenir ingénieure en développement logiciel et entrer à l'ISTY (UVSQ)</p>
-  </div>
-
-  <div class="section">
-    <h2>🛠️ Mes compétences</h2>
-    <table class="skills-table">
-      <tr><th>Domaine</th><th>Compétences</th></tr>
-      <tr><td>Web</td><td>HTML, CSS, un peu de JavaScript</td></tr>
-      <tr><td>Backend / Scripts</td><td>Lua (FiveM), SQL, PHP (début), Python (début)</td></tr>
-      <tr><td>Bases de données</td><td>MySQL / SQLite (avec FiveM)</td></tr>
-      <tr><td>Logiciels</td><td>VS Code, GitHub, Notion</td></tr>
-    </table>
-  </div>
+  <section>
+    <h2>🧭 Comment naviguer ?</h2>
+    <ul>
+      <li><strong>À propos :</strong> découvrir qui je suis.</li>
+      <li><strong>Développement :</strong> mes scripts, mon serveur FiveM, mes outils.</li>
+      <li><strong>Lobbies :</strong> mes univers imaginés et les expériences RP.</li>
+      <li><strong>Famille :</strong> les petites news personnelles, côté famille.</li>
+    </ul>
+  </section>
 
   <div class="section">
     <h2>📂 Mes projets</h2>

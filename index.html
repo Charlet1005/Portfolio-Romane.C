@@ -223,26 +223,6 @@ document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coo
       const menu = document.getElementById('menu-links');
       menu.classList.toggle('hidden');
     }
-    function toggleTheme() {
-      const root = document.documentElement;
-      const isLight = root.style.getPropertyValue('--bg-color') === '#f7f7f7';
-  
-      if (isLight) {
-        // dark green theme
-        root.style.setProperty('--bg-color', '#202e26');
-        root.style.setProperty('--text-color', '#e0ffe0');
-        root.style.setProperty('--accent-color', '#81c784');
-        root.style.setProperty('--border-color', '#406d4a');
-        document.getElementById("theme-toggle").textContent = "🌞 Thème clair";
-      } else {
-        // light green theme
-        root.style.setProperty('--bg-color', '#f7f7f7');
-        root.style.setProperty('--text-color', '#333');
-        root.style.setProperty('--accent-color', '#4CAF50');
-        root.style.setProperty('--border-color', '#ccc');
-        document.getElementById("theme-toggle").textContent = "🌱 Thème vert";
-      }
-    }
   </script>
 
 </body>

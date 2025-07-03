@@ -80,6 +80,31 @@
   </div>
 
   <div class="section">
+  <h2>📜 Mes scripts</h2>
+
+  <div class="project">
+    <h3>🔧 Script d'inventaire</h3>
+    <p><strong>Langage :</strong> Lua</p>
+    <p><strong>Description :</strong> Permet aux joueurs de stocker, utiliser et jeter des objets.</p>
+    <pre><code>
+RegisterNetEvent('inventory:useItem')
+AddEventHandler('inventory:useItem', function(item)
+  -- logique d'utilisation
+end)
+    </code></pre>
+    </div>
+
+    <div class="project">
+      <h3>🧭 GPS interne</h3>
+      <p><strong>Langage :</strong> JavaScript / HTML</p>
+      <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
+      <pre><code>
+  document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
+      </code></pre>
+    </div>
+  </div>
+
+  <div class="section">
     <h2>🎯 Objectif professionnel</h2>
     <p>Je souhaite devenir ingénieure en développement logiciel. Après mon BTS SIO SLAM, je vise l’ISTY à l’UVSQ pour suivre un cycle ingénieur et travailler dans le développement d’outils numériques au service du monde réel ou du jeu vidéo.</p>
   </div>

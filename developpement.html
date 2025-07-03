@@ -112,5 +112,12 @@ document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coo
     });
   }
 </script>
+  <script>
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    const menu = document.getElementById("menu-links");
+    menu.classList.toggle("show");
+  });
+</script>
+
 </body>
 </html>

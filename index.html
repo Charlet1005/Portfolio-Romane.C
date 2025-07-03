@@ -67,5 +67,12 @@
     localStorage.setItem('theme', next);
   });
 </script>
+  <script>
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    const menu = document.getElementById("menu-links");
+    menu.classList.toggle("show");
+  });
+</script>
+
 </body>
 </html>

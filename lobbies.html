@@ -16,6 +16,7 @@
 <div class="mobile-only">
   <button id="menu-toggle" class="menu-button">☰</button>
   <div id="menu-links" class="navbar hidden">
+    <button id="theme-toggle" class="theme-button">🌓</button>
     <a href="index.html">🏠 Accueil</a>
     <a href="apropos.html">🙋‍♀️ À propos</a>
     <a href="developpement.html">💻 Développement</a>
@@ -25,6 +26,7 @@
 </div>
 
 <nav class="navbar desktop-only">
+  <button id="theme-toggle" class="theme-button">🌓</button>
   <a href="index.html">🏠 Accueil</a>
   <a href="apropos.html">🙋‍♀️ À propos</a>
   <a href="developpement.html">💻 Développement</a>
@@ -32,7 +34,6 @@
   <a href="famille-news.html">📰 Famille</a>
 </nav>
 <body>
-  <button id="theme-toggle" class="theme-button">🌓</button>
   <script>
   const btn = document.getElementById('theme-toggle');
   btn.addEventListener('click', () => {

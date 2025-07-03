@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">  
+<html lang="fr" data-theme="light">  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 </head>
 
 <body>
@@ -16,7 +21,10 @@
     <a href="developpement.html">💻 Développement</a>
     <a href="lobbies.html">🎮 Lobbies</a>
     <a href="famille-news.html">📰 Famille</a>
-  </nav>  
+  </nav>
+  <div>
+    <button id="theme-toggle" style="margin-left: auto;">🌗</button>
+  </div>
 <div class="section">
   <h1>🧠 Qui je suis</h1>
   <p><strong>Nom :</strong> Romane Chaussis</p>
@@ -83,5 +91,16 @@ document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coo
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script>
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
+  }
+</script>
 </body>
 </html>

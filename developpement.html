@@ -1,7 +1,86 @@
-<nav class="navbar">
-  <a href="index.html">🏠 Accueil</a>
-  <a href="apropos.html">🙋‍♀️ À propos</a>
-  <a href="developpement.html">💻 Développement</a>
-  <a href="lobbies.html">🎮 Lobbies</a>
-  <a href="famille-news.html">📰 Famille</a>
-</nav>
+<!DOCTYPE html>
+<html lang="fr">  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Développement - Romane Chaussis</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="index.html">🏠 Accueil</a>
+    <a href="apropos.html">🙋‍♀️ À propos</a>
+    <a href="developpement.html">💻 Développement</a>
+    <a href="lobbies.html">🎮 Lobbies</a>
+    <a href="famille-news.html">📰 Famille</a>
+  </nav>  
+<div class="section">
+  <h2>🧠 Qui je suis</h2>
+  <p><strong>Nom :</strong> Romane Chaussis</p>
+  <p><strong>Âge :</strong> 25 ans</p>
+  <p><strong>Situation :</strong> Étudiante en reconversion (BTS SIO SLAM au CNED)</p>
+  <p><strong>Objectif :</strong> Devenir ingénieure en développement logiciel et entrer à l'ISTY (UVSQ)</p>
+</div>
+<div class="section">
+  <h2>🛠️ Mes compétences</h2>
+  <table class="skills-table">
+    <tr><th>Domaine</th><th>Compétences</th></tr>
+    <tr><td>Web</td><td>HTML, CSS, un peu de JavaScript</td></tr>
+    <tr><td>Backend / Scripts</td><td>Lua (FiveM), SQL, PHP (début), Python (début)</td></tr>
+    <tr><td>Bases de données</td><td>MySQL / SQLite (avec FiveM)</td></tr>
+    <tr><td>Logiciels</td><td>VS Code, GitHub, Notion</td></tr>
+  </table>
+</div>
+<div class="section">
+  <h2>📂 Mes projets</h2>
+  <div class="project">
+    <h3>🎮 Serveur RP FiveM</h3>
+    <p><strong>Ce que j’ai fait :</strong> configuration du serveur, scripts Lua, inventaire, GPS interne, système de récolte</p>
+    <p><strong>Langages utilisés :</strong> Lua, SQL, JS, HTML/CSS</p>
+    <p><strong>Ce que j’ai appris :</strong> relier front et back, structurer des données, déboguer</p>
+    <p><strong>Captures à venir :</strong> inventaire, carte, menu RP</p>
+</div>
+<div class="project">
+  <h3>🗂️ Application de gestion de scripts</h3>
+  <p><strong>Statut :</strong> En cours</p>
+  <p><strong>Fonction :</strong> outil pour suivre les scripts actifs / urgents, checklist, statut, urgence, commentaires</p>
+  <p><strong>Interface :</strong> maquette en cours sur Notion</p>
+</div>
+</div>
+<div class="section">
+  <h2>📜 Mes scripts</h2>
+  <div class="project">
+    <h3>🔧 Script d'inventaire</h3>
+    <p><strong>Langage :</strong> Lua</p>
+    <p><strong>Description :</strong> Permet aux joueurs de stocker, utiliser et jeter des objets.</p>
+    <pre><code class="language-lua">
+RegisterNetEvent('inventory:useItem')
+AddEventHandler('inventory:useItem', function(item)
+end)
+    </code></pre>
+  </div>
+    <div class="project">
+      <h3>🧭 GPS interne</h3>
+      <p><strong>Langage :</strong> JavaScript / HTML</p>
+      <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
+      <pre><code class="language-js">
+document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
+      </code></pre>
+    </div>
+  </div>
+  <p>
+    <a href="https://github.com/Charlet1005/Portfolio-Romane.C/tree/main/qb-newsjob" target="_blank">
+      📄 Voir le dossier qb-newsjob complet
+    </a>
+  </p>
+  <div class="section">
+    <h2>🎯 Objectif professionnel</h2>
+    <p>Je souhaite devenir ingénieure en développement logiciel. Après mon BTS SIO SLAM, je vise l’ISTY à l’UVSQ pour suivre un cycle ingénieur et travailler dans le développement d’outils numériques au service du monde réel ou du jeu vidéo.</p>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

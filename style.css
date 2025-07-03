@@ -239,3 +239,12 @@ h1, h2, h3 {
 .theme-button:hover {
   transform: scale(1.2);
 }
+
+.apropos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 20px;
+}

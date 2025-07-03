@@ -46,11 +46,13 @@ h1, h2, h3 {
   background-color: var(--nav-bg);
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 8px;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
   margin-bottom: 20px;
   justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
 .navbar a {

@@ -177,3 +177,20 @@ h1, h2, h3 {
     display: flex;
   }
 }
+
+/* Mobile only visible if width < 768px */
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+}

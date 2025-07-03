@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">  
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Famille News - Romane Chaussis</title>
+  <title>Famille – Romane Chaussis</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-  if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-</script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 </head>
-
 <body>
   <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
@@ -36,25 +34,46 @@
     <a href="famille-news.html">📰 Famille</a>
   </nav>
 
-<script>
-  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
-    const btn = document.getElementById(id);
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      });
-    }
-  });
+  <h1>📰 Nouvelles de la famille</h1>
 
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const menu = document.getElementById("menu-links");
-    menu.classList.toggle("show");
-  });
-</script>
+  <div class="section">
+    <p>Bienvenue sur la page dédiée à la famille Chaussis ! Ici, je partage quelques infos sur ma famille, notre quotidien, et nos petits moments de bonheur.</p>
 
+    <h2>📌 Dernières nouvelles</h2>
+    <ul>
+      <li>👩‍👧 Ma mère travaille au SDIS dans l'administration, à la PFL.</li>
+      <li>🚗 Moi, Romane, je vis à Millemont, un petit village paisible sans commerces... mais avec plein de verdure !</li>
+      <li>⚡ On roule écolo ! Ma voiture est une Citroën électrique, même si elle ne va pas très loin 😅.</li>
+    </ul>
+
+    <h2>🐱 Les membres à quatre pattes</h2>
+    <ul>
+      <li>🧡 <strong>Haslan</strong>, un Main Coon né le 3 mai 2012 – mon chouchou !</li>
+      <li>🤍 <strong>Mo</strong>, une Mau égyptienne née le 1er mai 2019 – très curieuse.</li>
+      <li>🖤 <strong>[Nom du troisième chat]</strong> – tu peux compléter ici si tu veux 😊</li>
+    </ul>
+
+    <h2>🧩 Ce que la famille m’a transmis</h2>
+    <p>De la bienveillance, de la débrouillardise, de la force tranquille... Et aussi un sens de l’organisation bien à moi (merci le TDAH 🧠✨).</p>
+  </div>
+
+  <script>
+    ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      }
+    });
+
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      const menu = document.getElementById("menu-links");
+      menu.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
-

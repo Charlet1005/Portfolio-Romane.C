@@ -35,20 +35,22 @@
     <a href="famille-news.html">📰 Famille</a>
   </nav>
 
-  <script>
-    const btn = document.getElementById('theme-toggle');
+<script>
+  const toggleButtons = document.querySelectorAll('#theme-toggle');
+  toggleButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     });
+  });
 
-    document.getElementById("menu-toggle").addEventListener("click", () => {
-      const menu = document.getElementById("menu-links");
-      menu.classList.toggle("show");
-    });
-  </script>
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    const menu = document.getElementById("menu-links");
+    menu.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
 

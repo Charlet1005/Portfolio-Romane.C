@@ -104,11 +104,49 @@
         margin-top: 10px;
       }
     }
+      :root {
+    --bg-color: #f7f7f7;
+    --text-color: #333;
+    --accent-color: #4CAF50;
+    --border-color: #ccc;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  h1, h2, h3 {
+    color: var(--accent-color);
+  }
+  
+  button#theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+    z-index: 999;
+  }
+  
+  button#theme-toggle:hover {
+    background-color: #388E3C;
+  }
+
   </style>
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 </head>
 <body>
+
+  <button onclick="toggleTheme()" id="theme-toggle">🌱 Thème vert</button>
 
   <div class="header">
     <h1>💻 Romane Chaussis – Portfolio développeuse junior</h1>
@@ -204,6 +242,26 @@ document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coo
     function toggleMenu() {
       const menu = document.getElementById('menu-links');
       menu.classList.toggle('hidden');
+    }
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isLight = root.style.getPropertyValue('--bg-color') === '#f7f7f7';
+  
+      if (isLight) {
+        // dark green theme
+        root.style.setProperty('--bg-color', '#202e26');
+        root.style.setProperty('--text-color', '#e0ffe0');
+        root.style.setProperty('--accent-color', '#81c784');
+        root.style.setProperty('--border-color', '#406d4a');
+        document.getElementById("theme-toggle").textContent = "🌞 Thème clair";
+      } else {
+        // light green theme
+        root.style.setProperty('--bg-color', '#f7f7f7');
+        root.style.setProperty('--text-color', '#333');
+        root.style.setProperty('--accent-color', '#4CAF50');
+        root.style.setProperty('--border-color', '#ccc');
+        document.getElementById("theme-toggle").textContent = "🌱 Thème vert";
+      }
     }
   </script>
 

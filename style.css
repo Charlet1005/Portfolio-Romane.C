@@ -230,3 +230,17 @@ h1, h2, h3 {
 .theme-button:hover {
   transform: scale(1.2);
 }
+
+.theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 10px;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.theme-button:hover {
+  transform: scale(1.2);
+}

@@ -35,25 +35,6 @@
     <a href="hobbies.html">🎨 Hobbies</a>
     <a href="famille-news.html">📰 Famille</a>
   </nav>
-
-<script>
-  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
-    const btn = document.getElementById(id);
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      });
-    }
-  });
-
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const menu = document.getElementById("menu-links");
-    menu.classList.toggle("show");
-  });
-</script>
   <header>
     <h1>Bienvenue sur le site de Romane Chaussis</h1>
     <p>Ce site rassemble mes projets de développement, mes idées créatives, mon parcours personnel, et même quelques nouvelles familiales.</p>

@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+document.addEventListener("DOMContentLoaded", () => {
   // 🔐 Connexion
   const loginBtn = document.getElementById("login-btn");
   const errorMsg = document.getElementById("error-msg");
@@ -42,8 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (errorMsg) {
         errorMsg.textContent = "Identifiants incorrects !";
         errorMsg.classList.add("show");
-
-        // ⏱️ Disparition du message après 3 secondes
         setTimeout(() => errorMsg.classList.remove("show"), 3000);
       }
     });

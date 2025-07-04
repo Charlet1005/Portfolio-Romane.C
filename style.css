@@ -599,3 +599,9 @@ pre[class*="language-"] {
   margin-top: 5px;
   font-size: 1.1em;
 }
+
+.top-banner .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

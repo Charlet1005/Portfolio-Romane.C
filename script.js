@@ -56,5 +56,6 @@ logoutLinks.forEach(link => {
 
 function logout() {
   sessionStorage.removeItem("connected");
-  window.location.href = "/";
+  window.location.href = "index.html";
 }
+

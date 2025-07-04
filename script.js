@@ -1,14 +1,15 @@
-// 🌙 Appliquer le thème sombre au chargement
+// 🌙 Thème sombre au chargement
 if (localStorage.getItem('theme') === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
 }
 
+// ✅ Toutes les fonctions dans un seul DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
-  // 🌗 Bascule entre clair et sombre
-  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
+  // 🌗 Bascule clair/sombre
+  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach(id => {
     const btn = document.getElementById(id);
     if (btn) {
-      btn.addEventListener('click', () => {
+      btn.addEventListener("click", () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 🍔 Menu mobile toggle
+  // 🍔 Menu mobile
   const menuToggle = document.getElementById("menu-toggle");
   if (menuToggle) {
     menuToggle.addEventListener("click", () => {
@@ -26,29 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const isConnected = sessionStorage.getItem("connected") === "true";
-
-  // 🔐 Affichage conditionnel des liens
-  const logoutLinks = document.querySelectorAll('a[onclick="logout()"]');
-  logoutLinks.forEach(link => {
-    link.style.display = isConnected ? "inline-block" : "none";
-  });
-
-  const loginLinks = document.querySelectorAll('a[href="login.html"]');
-  loginLinks.forEach(link => {
-    link.style.display = isConnected ? "none" : "inline-block";
-  });
-
-  // 🔐 Protection des pages privées (hors index.html et login.html)
-  const publicPages = ["index.html", "login.html", ""];
-  const currentPage = window.location.pathname.split("/").pop();
-
-  if (!publicPages.includes(currentPage) && !isConnected) {
-    window.location.href = "index.html";
-  }
-
-// 🔑 Connexion sur la page login.html
-document.addEventListener("DOMContentLoaded", () => {
+  // 🔐 Connexion
   const loginBtn = document.getElementById("login-btn");
   const errorMsg = document.getElementById("error-msg");
 
@@ -60,13 +39,32 @@ document.addEventListener("DOMContentLoaded", () => {
       if (user === "romane" && pass === "batterie78") {
         sessionStorage.setItem("connected", "true");
         window.location.href = "index.html";
-      } else {
-        if (errorMsg) {
-          errorMsg.textContent = "Identifiants incorrects !";
-          errorMsg.classList.add("show");
-        }
+      } else if (errorMsg) {
+        errorMsg.textContent = "Identifiants incorrects !";
+        errorMsg.classList.add("show");
+
+        // ⏱️ Disparition du message après 3 secondes
+        setTimeout(() => errorMsg.classList.remove("show"), 3000);
       }
     });
+  }
+
+  // 🔐 Gestion visibilité login/logout
+  const isConnected = sessionStorage.getItem("connected") === "true";
+
+  document.querySelectorAll('a[onclick="logout()"]').forEach(link => {
+    link.style.display = isConnected ? "inline-block" : "none";
+  });
+
+  document.querySelectorAll('a[href="login.html"]').forEach(link => {
+    link.style.display = isConnected ? "none" : "inline-block";
+  });
+
+  // 🔒 Rediriger si non connecté
+  const publicPages = ["index.html", "login.html", ""];
+  const currentPage = window.location.pathname.split("/").pop();
+  if (!publicPages.includes(currentPage) && !isConnected) {
+    window.location.href = "index.html";
   }
 });
 

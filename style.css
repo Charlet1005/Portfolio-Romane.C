@@ -32,6 +32,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 a {
@@ -99,6 +100,10 @@ h1, h2, h3 {
 #menu-links {
   background: var(--box-color);
   border: 1px solid var(--box-border);
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 #menu-links a {

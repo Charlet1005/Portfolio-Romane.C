@@ -47,9 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   }
 
-  // 🔑 Connexion sur la page login.html
+// 🔑 Connexion sur la page login.html
 document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login-btn");
+  const errorMsg = document.getElementById("error-msg");
+
+  if (errorMsg) errorMsg.classList.remove("show");
 
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
@@ -60,7 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("connected", "true");
         window.location.href = "index.html";
       } else {
-        alert("Identifiants incorrects !");
+        if (errorMsg) {
+          errorMsg.textContent = "Identifiants incorrects !";
+          errorMsg.classList.add("show");
+        }
       }
     });
   }

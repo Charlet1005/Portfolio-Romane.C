@@ -392,8 +392,8 @@ h1, h2, h3 {
   font-family: monospace;
   font-size: 14px;
   line-height: 1.4;
-  white-space: pre-wrap; /* pour éviter les scrolls horizontaux */
-  word-break: break-word; /* casse les lignes longues */
+  white-space: pre-wrap; 
+  word-break: break-word;
 }
 
 .code-block {
@@ -411,8 +411,8 @@ h1, h2, h3 {
 
 pre code {
   display: block;
-  background-color: #e8f5e9; /* vert très pâle */
-  color: #1b4332; /* vert foncé */
+  background-color: #e8f5e9;
+  color: #1b4332;
   border: 1px solid #c6f6d5;
   padding: 12px;
   border-radius: 6px;
@@ -424,7 +424,6 @@ pre code {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Thème sombre */
 [data-theme="dark"] pre code {
   background-color: #2a2a2a;
   color: #d0f0c0;

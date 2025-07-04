@@ -52,12 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login-btn");
   const errorMsg = document.getElementById("error-msg");
 
-  if (errorMsg) errorMsg.classList.remove("show");
-
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
-      const user = document.getElementById('username').value;
-      const pass = document.getElementById('password').value;
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
 
       if (user === "romane" && pass === "batterie78") {
         sessionStorage.setItem("connected", "true");

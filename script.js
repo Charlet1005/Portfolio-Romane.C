@@ -48,7 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 🔑 Connexion sur la page login.html
+document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login-btn");
+
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
       const user = document.getElementById('username').value;

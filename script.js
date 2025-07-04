@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🍔 Menu mobile
+// 🍔 Menu mobile
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const menuLinks = document.getElementById("menu-links");
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && menuLinks) {
     menuToggle.addEventListener("click", () => {
       menuLinks.classList.toggle("show");
+      menuLinks.classList.toggle("hidden"); // ← ajoute cette ligne
     });
   }
 });

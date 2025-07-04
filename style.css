@@ -433,26 +433,25 @@ pre code {
 /* THEME PRISM PERSONNALISÉ */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: var(--text-color);
-  background: var(--box-color);
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-  word-break: break-word;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  white-space: pre;
+  overflow-x: auto;
+  display: block;
+  word-break: normal;
   word-spacing: normal;
   tab-size: 2;
   hyphens: none;
-
-  border: 1px solid var(--box-border);
-  border-radius: 6px;
   padding: 1em;
   margin: 0.5em 0;
-  overflow-x: auto;
+  border: 1px solid var(--box-border);
+  border-radius: 6px;
+  background: var(--box-color);
+  color: var(--text-color);
   box-sizing: border-box;
+  line-height: 1.5;
 }
 
-/* 🌓 Thème Sombre pour PrismJS */
+/* Thème Sombre pour PrismJS */
 [data-theme="dark"] code[class*="language-"],
 [data-theme="dark"] pre[class*="language-"] {
   background: #1e1e1e;

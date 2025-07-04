@@ -3,9 +3,9 @@ if (localStorage.getItem('theme') === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
 }
 
-// ✅ Toutes les fonctions dans un seul DOMContentLoaded
+// ✅ Tout dans un seul DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
-  // 🌗 Bascule clair/sombre
+  // 🌗 Thème clair/sombre
   ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach(id => {
     const btn = document.getElementById(id);
     if (btn) {
@@ -19,24 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🍔 Menu mobile
-// 🍔 Menu mobile
-document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const menuLinks = document.getElementById("menu-links");
-
   if (menuToggle && menuLinks) {
     menuToggle.addEventListener("click", () => {
       menuLinks.classList.toggle("show");
-      menuLinks.classList.toggle("hidden"); // ← ajoute cette ligne
+      menuLinks.classList.toggle("hidden");
     });
   }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
   // 🔐 Connexion
   const loginBtn = document.getElementById("login-btn");
   const errorMsg = document.getElementById("error-msg");
-
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
       const user = document.getElementById("username").value;
@@ -53,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🔐 Gestion visibilité login/logout
+  // 🔐 Affichage conditionnel des liens
   const isConnected = sessionStorage.getItem("connected") === "true";
 
   document.querySelectorAll('a[onclick="logout()"]').forEach(link => {
@@ -64,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.style.display = isConnected ? "none" : "inline-block";
   });
 
-  // 🔒 Rediriger si non connecté
+  // 🔒 Redirection si page privée
   const publicPages = ["index.html", "login.html", ""];
   const currentPage = window.location.pathname.split("/").pop();
   if (!publicPages.includes(currentPage) && !isConnected) {

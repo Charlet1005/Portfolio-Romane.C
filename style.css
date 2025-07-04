@@ -395,3 +395,16 @@ pre {
   white-space: pre-wrap; /* pour éviter les scrolls horizontaux */
   word-break: break-word; /* casse les lignes longues */
 }
+
+.code-block {
+  background-color: var(--box-color);
+  border: 1px solid var(--box-border);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

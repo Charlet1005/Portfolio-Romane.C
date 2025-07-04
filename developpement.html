@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
+
+<link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-lua.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+
 <body>
     <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
@@ -33,15 +42,6 @@
     <a href="login.html">🔐 Connexion</a>
     <a href="#" onclick="logout()">🚪 Se déconnecter</a>
   </nav>
-  <!-- Prism.js CSS (clair + sombre automatique) -->
-  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" rel="stylesheet" media="(prefers-color-scheme: dark)" />
-  
-  <!-- Prism.js Script -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-  <!-- Langages supplémentaires -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-lua.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
 <div class="section">
   <h1>🧠 Qui je suis</h1>
   <p><strong>Nom :</strong> Romane Chaussis</p>
@@ -82,19 +82,20 @@
     <p><strong>Langage :</strong> Lua</p>
     <p><strong>Description :</strong> Permet aux joueurs de stocker, utiliser et jeter des objets.</p>
     <pre><code class="language-lua">
-RegisterNetEvent('inventory:useItem')
-AddEventHandler('inventory:useItem', function(item)
-end)
+  RegisterNetEvent('inventory:useItem')
+  AddEventHandler('inventory:useItem', function(item)
+  end)
     </code></pre>
   </div>
-    <div class="project">
-      <h3>🧭 GPS interne</h3>
-      <p><strong>Langage :</strong> JavaScript / HTML</p>
-      <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
-      <pre><code class="language-js">
-document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
-      </code></pre>
-    </div>
+  
+  <div class="project">
+    <h3>🧭 GPS interne</h3>
+    <p><strong>Langage :</strong> JavaScript / HTML</p>
+    <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
+    <pre><code class="language-javascript">
+  document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
+    </code></pre>
+  </div>
   </div>
   <p>
     <a href="https://github.com/Charlet1005/Portfolio-Romane.C/tree/main/qb-newsjob" target="_blank">

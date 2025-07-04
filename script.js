@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuToggle && menuLinks) {
     menuToggle.addEventListener("click", () => {
+      menuLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          menuLinks.classList.remove("show");
+          document.body.classList.remove("menu-open");
+  });
+});
+
       menuLinks.classList.toggle("show");
       document.body.classList.toggle("menu-open")
     });
@@ -35,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
+      
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
 

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && menuLinks) {
     menuToggle.addEventListener("click", () => {
       menuLinks.classList.toggle("show");
-      menuLinks.classList.toggle("hidden"); // ← pour basculer l'affichage
+      document.body.classList.toggle("menu-open")
     });
   }
 

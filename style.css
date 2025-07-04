@@ -408,3 +408,9 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+[data-theme="dark"] .code-block {
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  color: #d4d4d4;
+}

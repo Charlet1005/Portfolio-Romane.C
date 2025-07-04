@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const isConnected = sessionStorage.getItem("connected") === "true";
 
   // 🔐 Affichage conditionnel des liens
-  const logoutButtons = document.querySelectorAll('button[onclick="logout()"]');
-  logoutButtons.forEach(btn => {
-    btn.style.display = isConnected ? "inline-block" : "none";
-  });
+const logoutLinks = document.querySelectorAll('a[onclick="logout()"]');
+logoutLinks.forEach(link => {
+  link.style.display = isConnected ? "inline-block" : "none";
+});
 
   const loginLinks = document.querySelectorAll('a[href="login.html"]');
   loginLinks.forEach(link => {

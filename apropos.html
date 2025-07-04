@@ -31,35 +31,6 @@
     <a href="famille-news.html">📰 Famille</a>
     <a href="login.html">🔐 Connexion</a>
   </nav>
-  <script>
-    function logout() {
-      sessionStorage.removeItem("connected");
-      window.location.href = "index.html";
-    }
-
-    if (sessionStorage.getItem("connected") !== "true") {
-      const logoutButtons = document.querySelectorAll('button[onclick="logout()"]');
-      logoutButtons.forEach(btn => btn.style.display = "none");
-    }
-  </script>
-<script>
-  ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
-    const btn = document.getElementById(id);
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-      });
-    }
-  });
-
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const menu = document.getElementById("menu-links");
-    menu.classList.toggle("show");
-  });
-</script>
 <div id="welcome-msg" style="padding: 10px; font-weight: bold; color: green;"></div>
 <div class="apropos-header">
   <h1>À propos de moi</h1>

@@ -383,7 +383,7 @@ h1, h2, h3 {
   }
 }
 
-pre {
+/*pre {
   background-color: var(--box-color);
   border: 1px solid var(--box-border);
   padding: 10px;
@@ -430,4 +430,5 @@ pre code {
   color: #d0f0c0;
   border: 1px solid #444;
 }
+*/
 

@@ -581,3 +581,28 @@ pre[class*="language-"] {
 [data-theme="dark"] .token.important {
   color: #f6ad55;
 }
+
+.top-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--box-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.top-banner .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--heading-color);
+}

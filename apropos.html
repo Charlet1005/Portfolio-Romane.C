@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">  
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A propos - Romane Chaussis</title>
+  <title>A propos – Romane Chaussis</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  </script>
-  <script src="script.js"></script>
 </head>
 <body>
-  <script>
-    if (sessionStorage.getItem("connected") !== "true") {
-      window.location.href = "index.html";
-    }
-  </script>
-  <div class="mobile-only">
+    <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
     <div id="menu-links" class="navbar hidden">
       <button id="theme-toggle-mobile" class="theme-button">🌓</button>
@@ -29,7 +18,7 @@
       <a href="developpement.html">💻 Développement</a>
       <a href="hobbies.html">🎨 Hobbies</a>
       <a href="famille-news.html">📰 Famille</a>
-      <button onclick="logout()">🚪 Se déconnecter</button>
+      <a href="login.html">🔐 Connexion</a>
     </div>
   </div>
 
@@ -40,9 +29,8 @@
     <a href="developpement.html">💻 Développement</a>
     <a href="hobbies.html">🎨 Hobbies</a>
     <a href="famille-news.html">📰 Famille</a>
-    <button onclick="logout()">🚪 Se déconnecter</button>
+    <a href="login.html">🔐 Connexion</a>
   </nav>
-  
   <script>
     function logout() {
       sessionStorage.removeItem("connected");

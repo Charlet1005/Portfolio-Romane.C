@@ -82,9 +82,11 @@
     <p><strong>Langage :</strong> Lua</p>
     <p><strong>Description :</strong> Permet aux joueurs de stocker, utiliser et jeter des objets.</p>
     <pre><code class="language-lua">
-  RegisterNetEvent('inventory:useItem')
-  AddEventHandler('inventory:useItem', function(item)
-  end)
+    RegisterNetEvent('inventory:useItem')
+    AddEventHandler('inventory:useItem', function(item)
+      -- Ici tu pourrais faire quelque chose avec l'objet
+      print('Objet utilisé :', item)
+    end)
     </code></pre>
   </div>
   
@@ -93,8 +95,9 @@
     <p><strong>Langage :</strong> JavaScript / HTML</p>
     <p><strong>Description :</strong> Affiche la position du joueur sur une map interne au serveur.</p>
     <pre><code class="language-javascript">
-  document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
+    document.getElementById("gps").innerText = "Position : " + coords.x + ", " + coords.y;
     </code></pre>
+
   </div>
   </div>
   <p>

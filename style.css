@@ -98,6 +98,11 @@ h1, h2, h3 {
 }
 
 #menu-links {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 999;
   background: var(--box-color);
   border: 1px solid var(--box-border);
   max-height: 80vh;

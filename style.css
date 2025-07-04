@@ -294,3 +294,26 @@ h1, h2, h3 {
 .login-button:hover {
   background-color: #45a049;
 }
+
+.error-msg {
+  margin-top: 10px;
+  color: #b30000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border: 1px solid #ff9999;
+  border-radius: 5px;
+  font-weight: bold;
+  max-width: 400px;
+  display: none;
+}
+
+.error-msg.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

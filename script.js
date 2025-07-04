@@ -39,12 +39,6 @@ logoutLinks.forEach(link => {
     link.style.display = isConnected ? "none" : "inline-block";
   });
 
-  // 🟢 Message personnalisé de bienvenue
-  const welcome = document.getElementById("welcome-msg");
-  if (welcome && isConnected) {
-    welcome.textContent = "🟢 Bonjour Romane, vous êtes connectée.";
-  }
-
   // 🔐 Protection des pages privées (hors index.html et login.html)
   const publicPages = ["index.html", "login.html", ""];
   const currentPage = window.location.pathname.split("/").pop();

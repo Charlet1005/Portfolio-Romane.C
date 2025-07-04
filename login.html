@@ -2,31 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
-  <style>
-    body { font-family: Arial; padding: 50px; background: #f5f5f5; }
-    input, button { padding: 10px; margin: 5px 0; }
-  </style>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 <body>
   <h2>Connexion au site</h2>
   <input type="text" id="username" placeholder="Identifiant">
   <input type="password" id="password" placeholder="Mot de passe">
   <button onclick="login()">Se connecter</button>
-
-  <script>
-    function login() {
-      const user = document.getElementById('username').value;
-      const pass = document.getElementById('password').value;
-
-      if (user === "romane" && pass === "batterie78") {
-        sessionStorage.setItem("connected", "true");
-        window.location.href = "index.html";
-      } else {
-        alert("Identifiants incorrects !");
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

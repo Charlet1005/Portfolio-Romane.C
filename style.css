@@ -582,12 +582,6 @@ pre[class*="language-"] {
   color: #f6ad55;
 }
 
-.top-banner .left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .top-banner {
   background-color: var(--nav-bg);
   border-bottom: 1px solid var(--box-border);

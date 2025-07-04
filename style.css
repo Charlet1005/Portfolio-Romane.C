@@ -588,7 +588,7 @@ pre[class*="language-"] {
   padding: 10px 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: auto;
   gap: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -602,6 +602,6 @@ pre[class*="language-"] {
 
 .top-banner .left {
   display: flex;
-  align-items: center;
+  align-items: auto;
   gap: 10px;
 }

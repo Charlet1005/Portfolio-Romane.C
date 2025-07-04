@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 🚪 Fonction déconnexion
 function logout() {
   sessionStorage.removeItem("connected");
-  window.location.href = "index.html";
+  window.location.href = "/";
 }

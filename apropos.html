@@ -13,13 +13,13 @@
     }
   </script>
 </head>
-  <body>
-    <script>
-      if (sessionStorage.getItem("connected") !== "true") {
-        window.location.href = "index.html";
-      }
-    </script>
-    <div class="mobile-only">
+<body>
+  <script>
+    if (sessionStorage.getItem("connected") !== "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+  <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
     <div id="menu-links" class="navbar hidden">
       <button id="theme-toggle-mobile" class="theme-button">🌓</button>
@@ -28,13 +28,7 @@
       <a href="developpement.html">💻 Développement</a>
       <a href="hobbies.html">🎨 Hobbies</a>
       <a href="famille-news.html">📰 Famille</a>
-      <button onclick="logout()">Se déconnecter</button>
-        <script>
-          function logout() {
-            sessionStorage.removeItem("connected");
-            window.location.href = "index.html";
-          }
-        </script>
+      <button onclick="logout()">🚪 Se déconnecter</button>
     </div>
   </div>
 
@@ -45,8 +39,20 @@
     <a href="developpement.html">💻 Développement</a>
     <a href="hobbies.html">🎨 Hobbies</a>
     <a href="famille-news.html">📰 Famille</a>
+    <button onclick="logout()">🚪 Se déconnecter</button>
   </nav>
+  
+  <script>
+    function logout() {
+      sessionStorage.removeItem("connected");
+      window.location.href = "index.html";
+    }
 
+    if (sessionStorage.getItem("connected") !== "true") {
+      const logoutButtons = document.querySelectorAll('button[onclick="logout()"]');
+      logoutButtons.forEach(btn => btn.style.display = "none");
+    }
+  </script>
 <script>
   ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
     const btn = document.getElementById(id);
@@ -65,6 +71,7 @@
     menu.classList.toggle("show");
   });
 </script>
+<div id="welcome-msg" style="padding: 10px; font-weight: bold; color: green;"></div>
 <div class="apropos-header">
   <h1>À propos de moi</h1>
   <img id="profile-img" src="assets/photo-romane.jpeg" alt="Romane Chaussis">

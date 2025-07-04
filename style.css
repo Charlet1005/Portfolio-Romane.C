@@ -583,9 +583,6 @@ pre[class*="language-"] {
 }
 
 .top-banner {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   background-color: var(--nav-bg);
   border-bottom: 1px solid var(--box-border);
   display: flex;

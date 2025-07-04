@@ -409,18 +409,6 @@ pre {
   word-break: break-word;
 }
 
-[data-theme="dark"] .code-block {
-  background-color: #1e1e1e;
-  border: 1px solid #3a3a3a;
-  color: #d4d4d4;
-}
-
-[data-theme="dark"] pre {
-  background-color: #1e1e1e;
-  border: 1px solid #3a3a3a;
-  color: #d4d4d4;
-}
-
 pre,
 .code-block {
   background-color: var(--box-color);
@@ -441,3 +429,4 @@ pre,
   border: 1px solid #3a3a3a;
   color: #d4d4d4;
 }
+

@@ -411,13 +411,16 @@ pre {
 
 pre,
 .code-block {
+  max-width: 100%;
+  width: 95%;
+  margin: 0 auto; /* centre le bloc */
   background-color: var(--box-color);
   border: 1px solid var(--box-border);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 8px;
   font-family: monospace;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;

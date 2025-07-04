@@ -28,6 +28,13 @@
       <a href="developpement.html">💻 Développement</a>
       <a href="hobbies.html">🎨 Hobbies</a>
       <a href="famille-news.html">📰 Famille</a>
+      <button onclick="logout()">Se déconnecter</button>
+        <script>
+          function logout() {
+            sessionStorage.removeItem("connected");
+            window.location.href = "index.html";
+          }
+        </script>
     </div>
   </div>
 

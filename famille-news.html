@@ -3,23 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Famille – Romane Chaussis</title>
+  <title>A propos – Romane Chaussis</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  </script>
-  <script src="script.js"></script>
 </head>
 <body>
-  <script>
-    if (sessionStorage.getItem("connected") !== "true") {
-      window.location.href = "index.html";
-    }
-  </script>
-  <div class="mobile-only">
+    <div class="mobile-only">
     <button id="menu-toggle" class="menu-button">☰</button>
     <div id="menu-links" class="navbar hidden">
       <button id="theme-toggle-mobile" class="theme-button">🌓</button>
@@ -28,6 +18,8 @@
       <a href="developpement.html">💻 Développement</a>
       <a href="hobbies.html">🎨 Hobbies</a>
       <a href="famille-news.html">📰 Famille</a>
+      <a href="login.html">🔐 Se connecter</a>
+      <a href="#" onclick="logout()">🚪 Se déconnecter</a>
     </div>
   </div>
 
@@ -38,6 +30,8 @@
     <a href="developpement.html">💻 Développement</a>
     <a href="hobbies.html">🎨 Hobbies</a>
     <a href="famille-news.html">📰 Famille</a>
+    <a href="login.html">🔐 Connexion</a>
+    <a href="#" onclick="logout()">🚪 Se déconnecter</a>
   </nav>
 
   <h1>📰 Nouvelles de la famille</h1>
@@ -62,24 +56,6 @@
     <h2>🧩 Ce que la famille m’a transmis</h2>
     <p>De la bienveillance, de la débrouillardise, de la force tranquille... Et aussi un sens de l’organisation bien à moi (merci le TDAH 🧠✨).</p>
   </div>
-
-  <script>
-    ['theme-toggle-mobile', 'theme-toggle-desktop'].forEach((id) => {
-      const btn = document.getElementById(id);
-      if (btn) {
-        btn.addEventListener('click', () => {
-          const current = document.documentElement.getAttribute('data-theme');
-          const next = current === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('theme', next);
-        });
-      }
-    });
-
-    document.getElementById("menu-toggle").addEventListener("click", () => {
-      const menu = document.getElementById("menu-links");
-      menu.classList.toggle("show");
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>

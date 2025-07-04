@@ -19,13 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🍔 Menu mobile
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
-  if (menuToggle) {
+  const menuLinks = document.getElementById("menu-links");
+
+  if (menuToggle && menuLinks) {
     menuToggle.addEventListener("click", () => {
-      const menu = document.getElementById("menu-links");
-      if (menu) menu.classList.toggle("show");
+      menuLinks.classList.toggle("show");
     });
   }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // 🔐 Connexion

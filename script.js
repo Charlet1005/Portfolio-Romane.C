@@ -53,3 +53,20 @@ function logout() {
   window.location.href = "index.html";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("login-btn");
+  
+  if (loginBtn) {
+    loginBtn.addEventListener("click", () => {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if (user === "romane" && pass === "batterie78") {
+        sessionStorage.setItem("connected", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Identifiants incorrects !");
+      }
+    });
+  }
+});
